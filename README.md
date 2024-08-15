@@ -1,43 +1,28 @@
+![band.png](band.png)
 
-Installation information
-=======
+## Download
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions at [github](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+https://github.com/heerheer/xp_from_rightclick_harvest/releases
 
-Once you have your clone, you can initialize your copy.
+## Mod Description
 
-Setup Process:
---------
+With this mod, you can gain random experience (default 1-2) when you use right-click to harvest.
 
-Step 1: Open your command-line and browse to the folder where you extracted cloned your copy of this repository to.
+You can change the random min and max using config file.
 
-Step 2: You're left with a choice.
-If you prefer to use Eclipse:
-1. Run the following command: `gradlew genEclipseRuns` (`./gradlew genEclipseRuns` if you are on Mac/Linux)
-2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
-   or run `gradlew eclipse` to generate the project.
+Require Mod : [RightClickHarvest](https://github.com/JamCoreModding/right-click-harvest) 
 
-If you prefer to use IntelliJ:
-1. Open IDEA, and import project.
-2. Select your build.gradle file and have it import.
-3. Run the following command: `gradlew genIntellijRuns` (`./gradlew genIntellijRuns` if you are on Mac/Linux)
-4. Refresh the Gradle Project in IDEA if required.
+Version: **3.2.3+1.20.1-forge**
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can 
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+## Config
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license, if you do not agree with it you can change your mapping names to other crowdsourced names in your 
-build.gradle. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+in `.minecraft/config/xp_from_rightclick_harvest-common.toml`
+```toml
+#Minimum number of XP per right-click harvest
+#Range: > 0
+xp_min = 1
+#Maximum number of XP per right-click harvest
+#Range: > 0
+xp_max = 2
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+```
