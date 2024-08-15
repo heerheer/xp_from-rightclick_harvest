@@ -14,23 +14,20 @@ import java.util.Random;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(XPFromRightClickHarvestMod.MODID)
-public class XPFromRightClickHarvestMod
-{
+public class XPFromRightClickHarvestMod {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "xp_from_rightclick_harvest";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public XPFromRightClickHarvestMod()
-    {
+    public XPFromRightClickHarvestMod() {
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
 
@@ -42,7 +39,8 @@ public class XPFromRightClickHarvestMod
 
             Random rand = new Random();
 
-            int random = rand.nextInt(Config.min,Config.max);
+
+            int random = rand.nextInt(Config.min, Config.max + 1);
 
             event.getPlayer().giveExperiencePoints(random);
         }
